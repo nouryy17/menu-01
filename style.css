@@ -1,0 +1,98 @@
+*{
+box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+}
+body{
+    background-image: url("bg.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+body.open{
+  background-image: url("bg.webp")
+}
+button{
+    width: 30px;
+    height: 30px;
+    background-image: url(menu.svg);
+    background-color: transparent;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+}
+body.open button{
+  background-image: url("close.svg")
+}
+body .bg{
+    height: 88px;
+    background-color: black;
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    top: 44px;
+    left: 44px;
+    translate: -50% -50%;
+    transition: 0.5s;
+}
+
+body.open .bg{
+    height: 300vh;
+    opacity: 0.8;
+}
+
+.menu{
+    opacity: 0;
+    
+}
+.menu:hover a{
+    color: rgb(142, 142, 142);
+}
+body.open .menu{
+    opacity: 1;
+}
+.menu nav{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: fixed;
+    top: 30%;
+    left: 13%;
+}
+
+.menu nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    margin-bottom: 30px;
+    transition: 0.5s;
+    position: relative;
+    width: fit-content;
+}
+.menu nav a::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    transform: rotate(45deg);
+    top: 36%;
+    right: -23px;
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.menu nav a:hover::after{
+   opacity: 1;
+}
+.menu nav a:hover {
+    color: white;
+    padding-left: 30px;
+}
